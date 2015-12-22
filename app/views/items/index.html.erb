@@ -1,0 +1,6 @@
+<h1>MyCart</h1>
+<% @items.each do |i|%>
+	<div><p><%= i.name %><br>
+		<%= link_to "Shop", item_path(i) %>
+	</p></div>
+<%end%>
