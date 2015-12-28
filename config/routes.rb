@@ -4,10 +4,18 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
    
-  root 'items#index', as: 'items'
+  root 'pages#home'
+  get 'items/:id/products' => 'products#index'
+
+  get '/home' => 'pages#home'
+  get '/about' => 'pages#about'
+  get '/contact' => 'pages#contact'
+
+  get '/categories' => 'items#index'
+
 
   resources :items, :only => [:index, :show] do 
-    resources :products, :only => [:show] 
+    resources :products, :only => [:show, :index] 
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

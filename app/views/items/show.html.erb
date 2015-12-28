@@ -1,7 +1,8 @@
 <h1>MyCart</h1>
-<% @products.each do |p|%>
+<% @product.each do |p|%>
 	<div><%= image_tag p.image%></div>
 	<div><%= p.name%>
 	<p>Price(INR): <%= p.price%><br>
 	<%= link_to "Learn More", item_product_path(p.Item_id, p)%></p></div>
+
 <%end%>

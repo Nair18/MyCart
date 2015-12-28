@@ -1,12 +1,6 @@
 <h1>MyCart</h1>
- def index
-    if params[:search]
-      @articles = Article.search(params[:search]).order("created_at DESC")
-    else
-      @articles = Article.order("created_at DESC")
-    end
-  end
-<%= image_tag @product.image %>
-<%= @product.name%>
-<%= @product.price %>
+
+<%= image_tag @product.image %><br>
+<strong><%= @product.name%></strong><br>
+Price:<%= @product.price %><br>
 <%= @product.description%>
