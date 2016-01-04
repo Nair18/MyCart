@@ -1,8 +1,6 @@
-<%= params[:query] %>
-
 
 <% @products.each do |product|%>
 	<%= image_tag product.image%>
-	<%= product.name%>
 	<%= product.price%>
+	<%= product.name%>
 	<%end%>

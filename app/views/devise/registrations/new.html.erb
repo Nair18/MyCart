@@ -1,15 +1,23 @@
+
+<style>
+#signup {
+  text-align: center;
+}
+</style>
+<body>
+<section id="signup">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <strong><%= f.label :email %></strong><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <strong><%= f.label :password %></strong>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -22,8 +30,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up",:class => "btn btn-danger" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</section></body>

@@ -1,7 +1,14 @@
+<style>
+.container {
+background-color: #f5f5f5;
+}
+</style>
+<body>
 <h1>MyCart</h1>
-
+<div class="container">
 <%= image_tag @product.image %><br>
 <strong><%= @product.name%></strong><br>
 Price:<%= @product.price %><br>
 <%= @product.description%><br>
-<button><%= link_to "BUY"%></button>
+<%= link_to "Grab It",root_path, :class => "btn btn-danger"%>
+</div></body>

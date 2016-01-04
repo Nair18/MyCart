@@ -12,48 +12,73 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <style type="text/css">
+    .navbar ul {
+  list-style-type :none;
+
+  display :inline-block;
+
+
+  }
+  .navbar ul {
+    float:right;
+  }
+  .navbar ul li  {
+  
+  padding :10px;
+
+  display:inline-block;
+  margin:auto;
+  font-size: 20px;
+
+
+  }
+  h1  {
+   font-size:1.75em; 
+  }
+  
+  .navbar {
+    background-color: #000;
+  }
+  .jumbotron {
+    margin-top:-20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
   </head>
 
   <body>
-    <div class="container">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        
-        <ul>
-          <li><a class="active" href="/home">Home</a></li>
-          
-          <li><a href="/contact">Contact</a></li>
-          
-          <li><a href="/about">About</a></li>
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home"><h1>MyCart</h1 ></a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li ><a href="/home">Home</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/categories">Categories</a></li>
+         <% if user_signed_in? %>
 
-          <li><a href="/categories">Categories</a></li>
-           <form class="navbar-form navbar-right" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-          <% if user_signed_in? %>
-
-            <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+            <li><%= link_to "sign out", destroy_user_session_path, method: :delete , :class => "btn btn-default"%></li>
 
           <%else%>
-            <%=link_to "SignIn" , new_user_session_path%>
-            <%=link_to "Signup", new_user_registration_path %>
+            <li><%=link_to "SignIn" , new_user_session_path, :class => "btn btn-default"%></li>
+             <li><%=link_to "Signup", new_user_registration_path, :class => "btn btn-default" %></li>
           <%end%>
-
         </ul>
-
-      </nav></div>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-  <div class = "jumbotron"> 
+      </div>
+    </div>
+  </nav>
       
+    
 
+  <%= yield %>
 
-
-
-  <%= yield %></div>
-  
+   
   <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
