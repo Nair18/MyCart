@@ -11,10 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222040754) do
+ActiveRecord::Schema.define(version: 20160111060843) do
+
+  create_table "carts", force: true do |t|
+    t.string   "name"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "items", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_details", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.decimal  "price"
+    t.integer  "quantity"
+    t.datetime "ship_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "payment_id"
+    t.datetime "order_date"
+    t.datetime "ship_date"
+    t.datetime "required_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "payment_id"
+    t.string   "payment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,6 +64,34 @@ ActiveRecord::Schema.define(version: 20151222040754) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "supplier_id"
+  end
+
+  create_table "pros", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "suppliers", force: true do |t|
+    t.string   "company_name"
+    t.string   "contact_fname"
+    t.string   "contact_lname"
+    t.text     "address_1"
+    t.text     "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.integer  "phone_no"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -4,11 +4,14 @@ background-color: #f5f5f5;
 }
 </style>
 <body>
-<h1>MyCart</h1>
 <div class="container">
-<%= image_tag @product.image %><br>
+<%= image_tag @product.image%><br>
 <strong><%= @product.name%></strong><br>
-Price:<%= @product.price %><br>
+<h3>Price:<%=number_to_currency(@product.price) %></h3><br>
 <%= @product.description%><br>
-<%= link_to "Grab It",root_path, :class => "btn btn-danger"%>
+ <%= button_to "Add to Cart", add_to_cart_path, :method => :post, :class => 'btn btn-success' %>
+ <br>
+
+<a href ="/suppliers", class= "btn btn-danger">Suppliers</a>
+<a href ="/payment", class= "btn btn-success">Buy Now</a>
 </div></body>

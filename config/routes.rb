@@ -13,6 +13,13 @@ Rails.application.routes.draw do
 
   get '/categories' => 'items#index'
 
+  get '/items/:id/pros' => 'pros#index'
+
+  get '/suppliers' => 'suppliers#index', as: 'suppliers'
+
+  get '/payment' => 'pages#payment'
+
+  post '/add_to_cart/:item_id' => 'carts#add_to_cart', :as => 'add_to_cart'
 
   resources :items, :only => [:index, :show] do 
     resources :products, :only => [:show, :index] 

@@ -1,0 +1,12 @@
+<% @supply.each do |sup|%>
+<div class="jumbotron">
+	<h3>
+<%= sup.company_name%></h3>
+<h5><%= sup.contact_fname%>
+<%= sup.contact_lname%>,
+<%= sup.city%></h5>
+<p><%= sup.state%>, 
+<%= sup.country%>.<br>
+Email:<%= sup.email%><br>
+Phone:<%= sup.phone_no%></p>
+</div><%end%>
