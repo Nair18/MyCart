@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   get '/payment' => 'pages#payment'
 
-  post '/add_to_cart/:item_id' => 'carts#add_to_cart', :as => 'add_to_cart'
+  get '/cart' => 'cart#index'
+  get 'cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
 
   resources :items, :only => [:index, :show] do 
     resources :products, :only => [:show, :index] 
