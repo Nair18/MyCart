@@ -19,16 +19,16 @@ Rails.application.routes.draw do
 
   get '/payment' => 'pages#payment'
 
-<<<<<<< HEAD
+
  
   get '/carts' => 'carts#index'
   get 'carts/clear' => 'carts#clearCart'
   get '/carts/:id' => 'carts#add'
-=======
+
   get '/cart' => 'cart#index'
   get 'cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
->>>>>>> 19864e1fd06881fbf14c902ca783c51388630b12
+
 
   resources :items, :only => [:index, :show] do 
     resources :products, :only => [:show, :index] 
