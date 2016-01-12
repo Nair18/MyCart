@@ -9,9 +9,8 @@ background-color: #f5f5f5;
 <strong><%= @product.name%></strong><br>
 <h3>Price:<%=number_to_currency(@product.price) %></h3><br>
 <%= @product.description%><br>
- <%= button_to "Add to Cart", add_to_cart_path, :method => :post, :class => 'btn btn-success' %>
- <br>
-
+<a href="/carts/<%=@product.id%>" class= "btn btn-danger">AddToCart</a>
+ 
 <a href ="/suppliers", class= "btn btn-danger">Suppliers</a>
 <a href ="/payment", class= "btn btn-success">Buy Now</a>
 </div></body>
