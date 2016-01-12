@@ -12,5 +12,12 @@ background-color: #f5f5f5;
 <a href="/carts/<%=@product.id%>" class= "btn btn-danger">AddToCart</a>
  
 <a href ="/suppliers", class= "btn btn-danger">Suppliers</a>
-<a href ="/payment", class= "btn btn-success">Buy Now</a>
+<a href ="/payment", class= "btn btn-success">Buy Now</a><br>
+<p><h2><%=pluralize(@product.comments.count, "Reviews")%></h2></p><br>
+<% @comments.each do |comment|%>
+
+<h4><strong><%= comment.user.email%></strong></h4>
+<p><%= comment.content%></p>
+<%end%>
+<p><%= render 'comments/form'%></p>
 </div></body>
