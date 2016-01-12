@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 20160112075909) do
     t.string   "payment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
+=======
+     t.datetime "created_at"
+    t.datetime "updated_at"
+>>>>>>> 19864e1fd06881fbf14c902ca783c51388630b12
     t.string   "user_name"
     t.string   "email"
     t.integer  "phone"
@@ -69,7 +74,13 @@ ActiveRecord::Schema.define(version: 20160112075909) do
     t.integer  "card_no"
     t.integer  "cvc"
     t.integer  "user_id"
+<<<<<<< HEAD
     t.integer  "order_id"
+=======
+    t.integer  "order_id" 
+   
+   
+>>>>>>> 19864e1fd06881fbf14c902ca783c51388630b12
   end
 
   create_table "products", force: true do |t|
